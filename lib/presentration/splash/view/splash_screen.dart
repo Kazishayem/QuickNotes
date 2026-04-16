@@ -27,7 +27,7 @@ class _SplashScreenState extends State<SplashScreen> {
         width: double.infinity,
         decoration: const BoxDecoration(
           gradient: LinearGradient(
-            colors: [ColorManager.primary, ColorManager.second],
+            colors: [ColorManager.primary, Color.fromARGB(255, 189, 120, 127)],
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
           ),
@@ -40,11 +40,11 @@ class _SplashScreenState extends State<SplashScreen> {
                 width: 86,
                 height: 86,
                 decoration: BoxDecoration(
-                  color: Colors.white.withValues(alpha: 0.16),
+                  color: Colors.white.withValues(alpha: 0.2),
                   borderRadius: BorderRadius.circular(24),
                 ),
                 child: const Icon(
-                  Icons.account_balance_wallet_rounded,
+                  Icons.note_add_outlined,
                   color: Colors.white,
                   size: 44,
                 ),
