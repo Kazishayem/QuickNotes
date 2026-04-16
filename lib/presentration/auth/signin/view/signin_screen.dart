@@ -69,7 +69,7 @@ class _SigninScreenState extends State<SigninScreen> {
                 PrimaryButton(
                   title: "Login",
                   onPressed: () {
-                    context.push('/notes');
+                    context.go('/notes');
                   },
                 ),
 
