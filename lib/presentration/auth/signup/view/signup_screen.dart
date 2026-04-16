@@ -94,7 +94,7 @@ class _SignupScreenState extends State<SignupScreen> {
                       SizedBox(width: 5.w),
                       InkWell(
                         onTap: () {
-                          context.push('/');
+                          context.push('/signin');
                         },
                         child: Text(
                           "Login",
