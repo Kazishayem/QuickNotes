@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:quicknotes/presentration/auth/signin/view/signin_screen.dart';
+import 'package:quicknotes/presentration/auth/signup/view/signup_screen.dart';
+import 'package:quicknotes/presentration/splash/view/splash_screen.dart';
 
 // import '../views/splash_page.dart';
 // import '../views/login_page.dart';
@@ -11,18 +14,15 @@ class AppRouter {
   static final router = GoRouter(
     initialLocation: '/',
     routes: [
-      // GoRoute(
-      //   path: '/',
-      //   builder: (context, state) => const SplashPage(),
-      // ),
-      // GoRoute(
-      //   path: '/login',
-      //   builder: (context, state) => const LoginPage(),
-      // ),
-      // GoRoute(
-      //   path: '/register',
-      //   builder: (context, state) => const RegisterPage(),
-      // ),
+      GoRoute(
+        path: '/splash',
+        builder: (context, state) => const SplashScreen(),
+      ),
+      GoRoute(path: '/', builder: (context, state) => const SigninScreen()),
+      GoRoute(
+        path: '/signup',
+        builder: (context, state) => const SignupScreen(),
+      ),
       // GoRoute(
       //   path: '/home',
       //   builder: (context, state) => const HomePage(),
