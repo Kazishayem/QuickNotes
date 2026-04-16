@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:quicknotes/presentration/auth/signin/view/signin_screen.dart';
 import 'package:quicknotes/presentration/auth/signup/view/signup_screen.dart';
+import 'package:quicknotes/presentration/note/add%20note/view/addnote_screen.dart';
+import 'package:quicknotes/presentration/note/view/notes_screen.dart';
 import 'package:quicknotes/presentration/splash/view/splash_screen.dart';
 
 // import '../views/splash_page.dart';
@@ -23,14 +25,11 @@ class AppRouter {
         path: '/signup',
         builder: (context, state) => const SignupScreen(),
       ),
-      // GoRoute(
-      //   path: '/home',
-      //   builder: (context, state) => const HomePage(),
-      // ),
-      // GoRoute(
-      //   path: '/add-note',
-      //   builder: (context, state) => const AddNotePage(),
-      // ),
+      GoRoute(path: '/notes', builder: (context, state) => const NotesScreen()),
+      GoRoute(
+        path: '/add-note',
+        builder: (context, state) => const AddNoteScreen(),
+      ),
     ],
   );
 }

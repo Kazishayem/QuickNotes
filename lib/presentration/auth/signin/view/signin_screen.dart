@@ -66,7 +66,12 @@ class _SigninScreenState extends State<SigninScreen> {
 
                 const SizedBox(height: 25),
 
-                PrimaryButton(title: "Login", onPressed: () {}),
+                PrimaryButton(
+                  title: "Login",
+                  onPressed: () {
+                    context.push('/notes');
+                  },
+                ),
 
                 const SizedBox(height: 15),
 
