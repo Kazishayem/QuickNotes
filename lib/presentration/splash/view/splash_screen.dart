@@ -1,7 +1,8 @@
-import 'dart:async';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:quicknotes/core/constants/color_manager.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -14,10 +15,30 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
-    Timer(const Duration(seconds: 3), () {
-      if (!mounted) return;
-      context.push("/signin");
-    });
+    _handleSplash();
+  }
+
+  Future<void> _handleSplash() async {
+    final prefs = await SharedPreferences.getInstance();
+
+    final isFirstTime = prefs.getBool('isFirstTime') ?? true;
+
+    final user = FirebaseAuth.instance.currentUser;
+
+    // 🔥 First time → show delay
+    if (isFirstTime) {
+      await Future.delayed(const Duration(seconds: 3));
+      await prefs.setBool('isFirstTime', false);
+    }
+
+    if (!mounted) return;
+
+    // 🔥 Redirect
+    if (user != null) {
+      context.go('/notes');
+    } else {
+      context.go('/signin');
+    }
   }
 
   @override
@@ -40,7 +61,7 @@ class _SplashScreenState extends State<SplashScreen> {
                 width: 86,
                 height: 86,
                 decoration: BoxDecoration(
-                  color: Colors.white.withValues(alpha: 0.2),
+                  color: Colors.white.withOpacity(0.2),
                   borderRadius: BorderRadius.circular(24),
                 ),
                 child: const Icon(
@@ -51,7 +72,7 @@ class _SplashScreenState extends State<SplashScreen> {
               ),
               const SizedBox(height: 20),
               const Text(
-                'Quicks-Notes',
+                'Quick-Notes',
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: 28,

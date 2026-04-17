@@ -4,4 +4,5 @@ class AppRoutes {
   static const signup = '/signup';
   static const notes = '/notes';
   static const addNote = '/add-note';
+  static const noteDetails = '/note-details';
 }
