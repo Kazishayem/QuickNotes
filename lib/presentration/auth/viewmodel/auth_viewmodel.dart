@@ -12,8 +12,6 @@ class AuthViewModel extends StateNotifier<bool> {
 
   final FirebaseAuth _auth = FirebaseAuth.instance;
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
-
-  // 🔥 SIGN UP
   Future<bool> signUp(
       String name, String email, String password) async {
     try {
@@ -26,11 +24,7 @@ class AuthViewModel extends StateNotifier<bool> {
       );
 
       String uid = userCredential.user!.uid;
-
-      // update display name
       await userCredential.user!.updateDisplayName(name);
-
-      // save to firestore
       await _firestore.collection('users').doc(uid).set({
         'name': name,
         'email': email,
@@ -45,8 +39,6 @@ class AuthViewModel extends StateNotifier<bool> {
       return false;
     }
   }
-
-  // 🔥 SIGN IN
   Future<bool> signIn(String email, String password) async {
     try {
       state = true;
@@ -63,8 +55,6 @@ class AuthViewModel extends StateNotifier<bool> {
       return false;
     }
   }
-
-  // 🔥 LOGOUT (Bonus 😏)
   Future<void> logout() async {
     await _auth.signOut();
   }

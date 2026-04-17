@@ -25,7 +25,6 @@ class _SplashScreenState extends State<SplashScreen> {
 
     final user = FirebaseAuth.instance.currentUser;
 
-    // 🔥 First time → show delay
     if (isFirstTime) {
       await Future.delayed(const Duration(seconds: 3));
       await prefs.setBool('isFirstTime', false);
@@ -33,7 +32,6 @@ class _SplashScreenState extends State<SplashScreen> {
 
     if (!mounted) return;
 
-    // 🔥 Redirect
     if (user != null) {
       context.go('/notes');
     } else {

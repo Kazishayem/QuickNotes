@@ -27,7 +27,6 @@ class AddNoteScreen extends HookConsumerWidget {
           key: formKey,
           child: Column(
             children: [
-              // 🔹 Title Field
               CustomTextField(
                 controller: titleController,
                 hintText: 'Enter title',
@@ -41,7 +40,6 @@ class AddNoteScreen extends HookConsumerWidget {
 
               const SizedBox(height: 15),
 
-              // 🔹 Description Field
               CustomTextField(
                 hintText: "Enter description",
                 controller: descController,
@@ -57,7 +55,6 @@ class AddNoteScreen extends HookConsumerWidget {
 
               const SizedBox(height: 25),
 
-              // 🔥 Save Button
               PrimaryButton(
                 title: isLoading ? "Saving..." : "Save Note",
                 onPressed: isLoading
