@@ -41,10 +41,11 @@ class NotesRemoteDataSource {
     if (user == null) {
       return const Stream.empty();
     }
-
-    return _firestore
-        .collection('notes')
-        .where('uid', isEqualTo: user.uid)
-        .snapshots();
+  return FirebaseFirestore.instance
+    .collection('notes')
+    .where('uid', isEqualTo: user.uid)
+    .orderBy('createdAt', descending: true)
+    .snapshots();
   }
+
 }
