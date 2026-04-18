@@ -54,6 +54,10 @@ In this app, a user can register, login, add notes, and see note list from onlin
 3. Setup Firebase config (`google-services.json`, `firebase_options.dart`)
 4. Run `flutter run`
 
+## Demo & APK
+
+- Google Drive (Demo Video + APK): [Open Folder](https://drive.google.com/drive/folders/1bZwvLlP_nAXr95FodQjGyKe44tVcXk0y?usp=sharing)
+
 ## Notes
 
 - This project currently follows a minimal clean layered structure.
@@ -62,4 +66,5 @@ In this app, a user can register, login, add notes, and see note list from onlin
 ## Repository
 
 - GitHub: `https://github.com/Kazishayem/QuickNotes`
+
 
