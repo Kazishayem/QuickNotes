@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quicknotes/core/constants/color_manager.dart';
 
 class NoteDetailsScreen extends StatelessWidget {
   final String title;
@@ -35,7 +36,7 @@ class NoteDetailsScreen extends StatelessWidget {
               description,
               style: const TextStyle(
                 fontSize: 16,
-                color: Colors.grey,
+                color: ColorManager.black,
               ),
             ),
           ],

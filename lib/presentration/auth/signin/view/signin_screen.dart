@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:quicknotes/core/constants/color_manager.dart';
+import 'package:quicknotes/core/constants/icon_manager.dart';
 import 'package:quicknotes/presentration/auth/viewmodel/auth_viewmodel.dart';
 import 'package:quicknotes/presentration/common widget/custom_text_field.dart';
 import 'package:quicknotes/presentration/common widget/primary_button.dart';
@@ -29,12 +30,12 @@ class SigninScreen extends HookConsumerWidget {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    const Text(
-                      "Login",
-                      style: TextStyle(
-                        fontSize: 28,
-                        fontWeight: FontWeight.bold,
-                      ),
+                    SizedBox(height: 40.h),
+                    Image.asset(
+                      IconManager.book,
+                      width: 80.w,
+                      height: 80.h,
+                      fit: BoxFit.contain,
                     ),
 
                     const SizedBox(height: 30),

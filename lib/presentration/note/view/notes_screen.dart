@@ -97,7 +97,7 @@ class NotesScreen extends HookConsumerWidget {
                                 data['description'] ?? '',
                                 style: const TextStyle(
                                   fontSize: 14,
-                                  color: Colors.grey,
+                                  color: ColorManager.black,
                                 ),
                                 maxLines: 2,
                                 overflow: TextOverflow.ellipsis,

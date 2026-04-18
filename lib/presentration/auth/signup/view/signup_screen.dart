@@ -30,6 +30,7 @@ class SignupScreen extends HookConsumerWidget {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
+                    SizedBox(height: 50.h),
                     const Text(
                       "Register",
                       style: TextStyle(
@@ -101,8 +102,7 @@ class SignupScreen extends HookConsumerWidget {
                                 if (isSuccess) {
                                   ScaffoldMessenger.of(context).showSnackBar(
                                     const SnackBar(
-                                      content:
-                                          Text("Signup Successful ✅"),
+                                      content: Text("Signup Successful ✅"),
                                     ),
                                   );
 
