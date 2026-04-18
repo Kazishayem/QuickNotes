@@ -69,12 +69,14 @@ class AddNoteScreen extends HookConsumerWidget {
                               );
 
                           if (isSuccess) {
+                            if (!context.mounted) return;
                             ScaffoldMessenger.of(context).showSnackBar(
                               const SnackBar(content: Text("Note Added ✅")),
                             );
-
-                            context.pop(); // 🔥 back to notes
+                            if (!context.mounted) return;
+                            context.pop(); 
                           } else {
+                            if (!context.mounted) return;
                             ScaffoldMessenger.of(context).showSnackBar(
                               const SnackBar(
                                 content: Text("Failed to add note"),

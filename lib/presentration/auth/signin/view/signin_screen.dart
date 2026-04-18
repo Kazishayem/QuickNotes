@@ -85,8 +85,10 @@ class SigninScreen extends HookConsumerWidget {
                                     );
 
                                 if (isSuccess) {
+                                  if (!context.mounted) return;
                                   context.go('/notes');
                                 } else {
+                                  if (!context.mounted) return;
                                   ScaffoldMessenger.of(context).showSnackBar(
                                     const SnackBar(
                                       content: Text("Login Failed"),

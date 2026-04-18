@@ -100,14 +100,16 @@ class SignupScreen extends HookConsumerWidget {
                                     );
 
                                 if (isSuccess) {
+                                  if (!context.mounted) return;
                                   ScaffoldMessenger.of(context).showSnackBar(
                                     const SnackBar(
                                       content: Text("Signup Successful ✅"),
                                     ),
                                   );
-
+                                  if (!context.mounted) return;
                                   context.go('/signin');
                                 } else {
+                                  if (!context.mounted) return;
                                   ScaffoldMessenger.of(context).showSnackBar(
                                     const SnackBar(
                                       content: Text("Signup Failed"),

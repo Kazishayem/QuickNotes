@@ -33,6 +33,7 @@ class NotesScreen extends HookConsumerWidget {
                     onPressed: () async {
                       await ref.read(authViewModelProvider.notifier).logout();
 
+                      if (!context.mounted) return;
                       context.go('/signin');
                     },
                   ),
@@ -75,7 +76,7 @@ class NotesScreen extends HookConsumerWidget {
                             boxShadow: [
                               BoxShadow(
                                 blurRadius: 5,
-                                color: Colors.black.withOpacity(0.05),
+                                color: Colors.black.withValues(alpha: 0.05),
                                 offset: const Offset(0, 2),
                               ),
                             ],
