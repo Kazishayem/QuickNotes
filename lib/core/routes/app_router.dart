@@ -7,8 +7,8 @@ import 'package:quicknotes/presentration/note/view/notes_screen.dart';
 import 'package:quicknotes/presentration/splash/view/splash_screen.dart';
 
 class AppRouter {
-  static final router = GoRouter(
-    initialLocation: '/',
+  static GoRouter router(String initialLocation) => GoRouter(
+    initialLocation: initialLocation,
     routes: [
       GoRoute(path: '/', builder: (context, state) => const SplashScreen()),
       GoRoute(
