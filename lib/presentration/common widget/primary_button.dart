@@ -29,26 +29,49 @@ class PrimaryButton extends StatelessWidget {
         child: ElevatedButton(
           onPressed: onPressed,
           style: ButtonStyle(
-            backgroundColor: WidgetStateProperty.all(
-              backgroundColor ?? ColorManager.primary,
-            ),
+            backgroundColor: WidgetStateProperty.all(Colors.transparent),
+            surfaceTintColor: WidgetStateProperty.all(Colors.transparent),
             elevation: WidgetStateProperty.all(0),
             shadowColor: WidgetStateProperty.all(Colors.transparent),
-            padding: WidgetStateProperty.all(
-              EdgeInsets.symmetric(vertical: 14.h),
-            ),
+            padding: WidgetStateProperty.all(EdgeInsets.zero),
             shape: WidgetStateProperty.all(
-              RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.r)),
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(14.r)),
             ),
           ),
-          child: Text(
-            title,
-            style:
-                style ??
-                TextStyle(
-                  fontSize: 18.sp,
-                  color: textColor ?? ColorManager.white,
+          child: Ink(
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(14.r),
+              gradient: LinearGradient(
+                colors: [
+                  backgroundColor ?? ColorManager.primary,
+                  ColorManager.primaryDark,
+                ],
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+              ),
+              boxShadow: const [
+                BoxShadow(
+                  color: Color(0x2FEF5D3E),
+                  blurRadius: 20,
+                  offset: Offset(0, 10),
                 ),
+              ],
+            ),
+            child: Container(
+              alignment: Alignment.center,
+              padding: EdgeInsets.symmetric(vertical: 14.h),
+              child: Text(
+                title,
+                style:
+                    style ??
+                    TextStyle(
+                      fontSize: 16.sp,
+                      fontWeight: FontWeight.w700,
+                      letterSpacing: 0.2,
+                      color: textColor ?? ColorManager.white,
+                    ),
+              ),
+            ),
           ),
         ),
       ),

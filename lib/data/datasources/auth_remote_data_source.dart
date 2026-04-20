@@ -7,11 +7,9 @@ final authRemoteDataSourceProvider = Provider<AuthRemoteDataSource>((ref) {
 });
 
 class AuthRemoteDataSource {
-  AuthRemoteDataSource({
-    FirebaseAuth? auth,
-    FirebaseFirestore? firestore,
-  })  : _auth = auth ?? FirebaseAuth.instance,
-        _firestore = firestore ?? FirebaseFirestore.instance;
+  AuthRemoteDataSource({FirebaseAuth? auth, FirebaseFirestore? firestore})
+    : _auth = auth ?? FirebaseAuth.instance,
+      _firestore = firestore ?? FirebaseFirestore.instance;
 
   final FirebaseAuth _auth;
   final FirebaseFirestore _firestore;
@@ -38,6 +36,8 @@ class AuthRemoteDataSource {
 
       return true;
     } on FirebaseAuthException {
+      return false;
+    } on FirebaseException {
       return false;
     }
   }

@@ -1,0 +1,4 @@
+storePassword=CHANGE_ME
+keyPassword=CHANGE_ME
+keyAlias=quicknotes
+storeFile=/absolute/path/to/quicknotes-upload.jks

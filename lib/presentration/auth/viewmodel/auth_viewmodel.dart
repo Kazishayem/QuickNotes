@@ -2,8 +2,7 @@ import 'package:flutter_riverpod/legacy.dart';
 import 'package:quicknotes/data/repositories/auth_repository_impl.dart';
 import 'package:quicknotes/domain/repositories/auth_repository.dart';
 
-final authViewModelProvider =
-    StateNotifierProvider<AuthViewModel, bool>((ref) {
+final authViewModelProvider = StateNotifierProvider<AuthViewModel, bool>((ref) {
   final repository = ref.watch(authRepositoryProvider);
   return AuthViewModel(repository);
 });

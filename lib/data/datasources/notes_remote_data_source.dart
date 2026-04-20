@@ -7,11 +7,9 @@ final notesRemoteDataSourceProvider = Provider<NotesRemoteDataSource>((ref) {
 });
 
 class NotesRemoteDataSource {
-  NotesRemoteDataSource({
-    FirebaseFirestore? firestore,
-    FirebaseAuth? auth,
-  })  : _firestore = firestore ?? FirebaseFirestore.instance,
-        _auth = auth ?? FirebaseAuth.instance;
+  NotesRemoteDataSource({FirebaseFirestore? firestore, FirebaseAuth? auth})
+    : _firestore = firestore ?? FirebaseFirestore.instance,
+      _auth = auth ?? FirebaseAuth.instance;
 
   final FirebaseFirestore _firestore;
   final FirebaseAuth _auth;
@@ -41,11 +39,10 @@ class NotesRemoteDataSource {
     if (user == null) {
       return const Stream.empty();
     }
-  return FirebaseFirestore.instance
-    .collection('notes')
-    .where('uid', isEqualTo: user.uid)
-    .orderBy('createdAt', descending: true)
-    .snapshots();
+    return _firestore
+        .collection('notes')
+        .where('uid', isEqualTo: user.uid)
+        .orderBy('createdAt', descending: true)
+        .snapshots();
   }
-
 }

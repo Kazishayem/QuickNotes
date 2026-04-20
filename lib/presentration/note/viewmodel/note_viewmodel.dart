@@ -9,7 +9,9 @@ final noteViewModelProvider = StateNotifierProvider<NoteViewModel, bool>((ref) {
   return NoteViewModel(repository);
 });
 
-final notesProvider = StreamProvider<QuerySnapshot>((ref) {
+final notesProvider = StreamProvider<QuerySnapshot<Map<String, dynamic>>>((
+  ref,
+) {
   final repository = ref.watch(noteRepositoryProvider);
   return repository.getNotesStream();
 });

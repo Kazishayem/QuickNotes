@@ -46,9 +46,9 @@ class _SplashScreenState extends State<SplashScreen> {
         width: double.infinity,
         decoration: const BoxDecoration(
           gradient: LinearGradient(
-            colors: [ColorManager.primary, Color.fromARGB(255, 189, 120, 127)],
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
+            colors: ColorManager.warmGradient,
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
           ),
         ),
         child: Center(
@@ -59,8 +59,8 @@ class _SplashScreenState extends State<SplashScreen> {
                 width: 86,
                 height: 86,
                 decoration: BoxDecoration(
-                  color: Colors.white.withValues(alpha: 0.2),
-                  borderRadius: BorderRadius.circular(24),
+                  color: Colors.white.withValues(alpha: 0.15),
+                  borderRadius: BorderRadius.circular(22),
                 ),
                 child: const Icon(
                   Icons.note_add_outlined,
@@ -70,7 +70,7 @@ class _SplashScreenState extends State<SplashScreen> {
               ),
               const SizedBox(height: 20),
               const Text(
-                'Quick-Notes',
+                'QuickNotes',
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: 28,

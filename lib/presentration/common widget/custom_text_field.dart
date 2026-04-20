@@ -39,46 +39,46 @@ class _CustomTextFieldState extends State<CustomTextField> {
       child: TextFormField(
         controller: widget.controller,
         keyboardType: widget.keyboardType,
-
         obscureText: widget.isPassword ? obscureText : false,
-
         maxLines: widget.isPassword ? 1 : widget.maxLines,
-        minLines: widget.minLines,
-
+        minLines: widget.isPassword ? 1 : widget.minLines,
         validator: widget.validator,
-
         decoration: InputDecoration(
           hintText: widget.hintText,
-
+          hintStyle: const TextStyle(color: Color(0xFF8D8D8D), fontSize: 14),
+          filled: true,
+          fillColor: Colors.white,
           contentPadding: const EdgeInsets.symmetric(
-            vertical: 14,
-            horizontal: 12,
+            vertical: 16,
+            horizontal: 14,
           ),
-
           enabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(10),
-            borderSide: BorderSide(color: ColorManager.grey, width: 1),
+            borderRadius: BorderRadius.circular(14),
+            borderSide: BorderSide(
+              color: ColorManager.grey.withValues(alpha: 0.45),
+              width: 1.2,
+            ),
           ),
-
           focusedBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(10),
-            borderSide: BorderSide(color: ColorManager.second, width: 2),
+            borderRadius: BorderRadius.circular(14),
+            borderSide: const BorderSide(
+              color: ColorManager.primary,
+              width: 1.8,
+            ),
           ),
-
           errorBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(10),
+            borderRadius: BorderRadius.circular(14),
             borderSide: const BorderSide(color: Colors.red),
           ),
-
           focusedErrorBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(10),
+            borderRadius: BorderRadius.circular(14),
             borderSide: const BorderSide(color: Colors.red, width: 2),
           ),
-
           suffixIcon: widget.isPassword
               ? IconButton(
                   icon: Icon(
                     obscureText ? Icons.visibility_off : Icons.visibility,
+                    color: const Color(0xFF8D8D8D),
                   ),
                   onPressed: () {
                     setState(() {

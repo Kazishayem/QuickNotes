@@ -24,17 +24,20 @@ class AppRouter {
         path: '/add-note',
         builder: (context, state) => const AddNoteScreen(),
       ),
-    GoRoute(
-  path: '/note-details',
-  builder: (context, state) {
-    final data = state.extra as Map<String, dynamic>;
+      GoRoute(
+        path: '/note-details',
+        builder: (context, state) {
+          final data = state.extra;
+          if (data is! Map<String, dynamic>) {
+            return const NoteDetailsScreen(title: '', description: '');
+          }
 
-    return NoteDetailsScreen(
-      title: data['title'] ?? '',
-      description: data['description'] ?? '',
-    );
-  },
-),
+          return NoteDetailsScreen(
+            title: data['title']?.toString() ?? '',
+            description: data['description']?.toString() ?? '',
+          );
+        },
+      ),
     ],
   );
 }
