@@ -28,31 +28,30 @@ Create and manage notes with title and description
 Real-time note synchronization using cloud database
 Clean and responsive UI
 Logout functionality
+
 🛠 Tech Stack
+
 Flutter
 Firebase Authentication
 Cloud Firestore
 Hook Riverpod (State Management)
 Go Router (Navigation)
-📂 Project Architecture
 
+📂 Project Architecture
 The project follows a modular layered architecture:
 
 presentation/ → UI & ViewModels
 data/ → Data sources & repository implementations
 domain/ → Abstract repository contracts
 core/ → App routes and constants
+
 ▶️ Getting Started
 Clone the repository
 Run flutter pub get
 Configure Firebase (google-services.json, firebase_options.dart)
 Run the app using flutter run
-📦 Demo & APK
-
-Google Drive: Demo Video + APK
 
 🔗 Repository
 
 GitHub: https://github.com/Kazishayem/QuickNotes
-
 
