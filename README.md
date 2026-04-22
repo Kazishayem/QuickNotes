@@ -20,7 +20,7 @@ samples, guidance on mobile development, and a full API reference. -->
 QuickNotes is a lightweight and user-friendly note-taking mobile application built using Flutter.
 The app allows users to securely manage their personal notes with real-time cloud synchronization.
 
-🚀 Key Features
+🚀 Key Features:
 Smooth splash experience on app launch
 Secure authentication (Email & Password)
 User registration with basic profile information
@@ -29,7 +29,7 @@ Real-time note synchronization using cloud database
 Clean and responsive UI
 Logout functionality
 
-🛠 Tech Stack
+🛠 Tech Stack:
 
 Flutter
 Firebase Authentication
@@ -37,7 +37,7 @@ Cloud Firestore
 Hook Riverpod (State Management)
 Go Router (Navigation)
 
-📂 Project Architecture
+📂 Project Architecture:
 The project follows a modular layered architecture:
 
 presentation/ → UI & ViewModels
@@ -45,7 +45,7 @@ data/ → Data sources & repository implementations
 domain/ → Abstract repository contracts
 core/ → App routes and constants
 
-▶️ Getting Started
+▶️ Getting Started:
 Clone the repository
 Run flutter pub get
 Configure Firebase (google-services.json, firebase_options.dart)
