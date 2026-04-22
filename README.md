@@ -17,54 +17,42 @@ For help getting started with Flutter development, view the
 samples, guidance on mobile development, and a full API reference. -->
 
 # QuickNotes
+QuickNotes is a lightweight and user-friendly note-taking mobile application built using Flutter.
+The app allows users to securely manage their personal notes with real-time cloud synchronization.
 
-QuickNotes is a simple Flutter notes app built for an assessment task.  
-In this app, a user can register, login, add notes, and see note list from online database.
+🚀 Key Features
+Smooth splash experience on app launch
+Secure authentication (Email & Password)
+User registration with basic profile information
+Create and manage notes with title and description
+Real-time note synchronization using cloud database
+Clean and responsive UI
+Logout functionality
+🛠 Tech Stack
+Flutter
+Firebase Authentication
+Cloud Firestore
+Hook Riverpod (State Management)
+Go Router (Navigation)
+📂 Project Architecture
 
-## Features
+The project follows a modular layered architecture:
 
-- Splash screen (shown on first app launch)
-- Email/password login
-- Registration with name, email, password
-- Notes list on home screen
-- Add note with title and description
-- Notes are stored in Firebase Firestore
-- Logout support
+presentation/ → UI & ViewModels
+data/ → Data sources & repository implementations
+domain/ → Abstract repository contracts
+core/ → App routes and constants
+▶️ Getting Started
+Clone the repository
+Run flutter pub get
+Configure Firebase (google-services.json, firebase_options.dart)
+Run the app using flutter run
+📦 Demo & APK
 
-## Tech Stack
+Google Drive: Demo Video + APK
 
-- Flutter
-- Firebase Auth
-- Cloud Firestore
-- Hook Riverpod (state management)
-- Go Router (navigation)
+🔗 Repository
 
-## Project Structure (Short)
-
-- `lib/presentration/` → UI screens + viewmodels
-- `lib/data/datasources/` → Firebase data source
-- `lib/data/repositories/` → repository implementations
-- `lib/domain/repositories/` → abstract contracts
-- `lib/core/` → routes + constants
-
-## How to Run
-
-1. Clone this repository
-2. Run `flutter pub get`
-3. Setup Firebase config (`google-services.json`, `firebase_options.dart`)
-4. Run `flutter run`
-
-## Demo & APK
-
-- Google Drive (Demo Video + APK): [Open Folder](https://drive.google.com/drive/folders/1bZwvLlP_nAXr95FodQjGyKe44tVcXk0y?usp=sharing)
-
-## Notes
-
-- This project currently follows a minimal clean layered structure.
-- Main focus was completing the assessment requirements properly.
-
-## Repository
-
-- GitHub: `https://github.com/Kazishayem/QuickNotes`
+GitHub: https://github.com/Kazishayem/QuickNotes
 
 
